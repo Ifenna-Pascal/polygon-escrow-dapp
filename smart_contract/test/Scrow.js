@@ -12,7 +12,7 @@ describe("Escrow", function () {
     it("it should revert with message Details cannot be empty", async () => {
       await contract.deployed();
 
-      await expect(contract.createAggrement("", 0.2)).to.be.revertedWith(
+      await expect(contract.createAggrement("", ethers.utils.parseEther("0.2"))).to.be.revertedWith(
         "Details cannot be empty"
       );
     });
